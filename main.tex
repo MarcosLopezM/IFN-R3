@@ -5,7 +5,7 @@
 \usepackage{bm}
 \usepackage{chemformula}
 \usepackage{csquotes}
-\usepackage[useregional]{datetime2}
+\usepackage[es]{datetime2}
 \usepackage{enumitem}
 \usepackage{empheq}
 \usepackage{fancyhdr}
@@ -42,6 +42,9 @@
 \setlength{\parskip}{0.5em} % Espacio entre párrafos
 \linespread{1.1} % line spacing
 \setlength{\jot}{10pt} % Space between lines in multiline eqs
+
+\newcommand{\idest}{\emph{i.e.},\xspace} % id est
+\DTMsavedate{duedate}{2023-05-09}
 
 \geometry{
     letterpaper,
@@ -107,7 +110,7 @@
     Abraham Jain Jiménez \\ \href{mailto:jain@ciencias.unam.mx}{\footnotesize jain@ciencias.unam.mx}
   \and Marcos López Merino \\ \href{mailto:marcoslm@ciencias.unam.mx}{\footnotesize marcoslm@ciencias.unam.mx}
 }%
-\date{Entrega: \duedate}
+\date{Entrega: \DTMusedate{duedate}}
 
 % Encabezado y pie de página
 \setlength{\headheight}{43pt}
@@ -135,9 +138,6 @@
 
 \addbibresource{bibliography.bib}
 
-\newcommand{\idest}{\emph{i.e.},\xspace} % id est
-\newcommand{\duedate}{\DTMdisplaydate{2023}{05}{09}{-1}}
-
 \begin{document}
     \maketitle
     \thispagestyle{fancy}
@@ -146,7 +146,7 @@
     \end{abstract}
 
     \section*{Introducción}
-    \kant[1-2]
+    \kant[1-2]\cite{4001NIMBins}
     
     \section*{Desarrollo experimental}
     \kant[1-2]
@@ -155,8 +155,9 @@
     \kant[1-2]
     
     \section*{Resultados y conclusiones}
-    \kant[1]    
+    \kant[1]
     
+    \nocite{*} % Show all references    
     % Referencias
     \newpage
     \printbibliography
