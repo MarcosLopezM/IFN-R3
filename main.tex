@@ -1,0 +1,163 @@
+\documentclass[12pt]{article}
+\usepackage[export]{adjustbox}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{appendix}
+\usepackage{bm}
+\usepackage{chemformula}
+\usepackage{csquotes}
+\usepackage[useregional]{datetime2}
+\usepackage{enumitem}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{kantlipsum}
+\usepackage{lastpage}
+\usepackage{linebreaker} % line-breaker algorithm in LuaLaTeX
+\usepackage{lualatex-math} % Fixes for mathematics
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{mismath}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{tabularray}
+\usepackage{titling}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{polyglossia}
+\usepackage[
+    sorting = none
+]{biblatex}
+\usepackage{hyperref}
+\setmainlanguage{spanish}
+% \setmainlanguage[variant=mexican]{spanish}
+\usepackage{cleveref}
+\gappto\captionsspanish{\renewcommand{\tablename}{Tabla}} % Table's caption name
+\crefname{table}{Tabla}{Tablas} % Table's cross-reference name
+\crefname{figure}{Fig.}{Figs.} % Figure's cross-reference name
+\crefname{equation}{}{} % Equation's cross-reference name
+
+\setlength{\parindent}{2em} % Sangría
+\setlength{\parskip}{0.5em} % Espacio entre párrafos
+\linespread{1.1} % line spacing
+\setlength{\jot}{10pt} % Space between lines in multiline eqs
+
+\geometry{
+    letterpaper,
+    margin = 0.6in,
+    includefoot
+}
+
+% Line-breaker config
+\linebreakersetup {
+    maxtolerance = 90,
+    maxemergencystretch = 1em,
+    maxcycles = 4
+}
+
+\graphicspath{{./img/}}
+
+\hypersetup{
+    colorlinks = true,%
+    linkcolor={[rgb]{0,0.2,0.6}},%
+    citecolor={[rgb]{0,0.6,0.2}},%
+    filecolor={[rgb]{0.8,0,0.8}},%
+    urlcolor={[rgb]{0.8,0,0.8}},%
+    runcolor={[rgb]{0.8,0,0.8}},% 
+    menucolor={[rgb]{0,0.2,0.6}},%
+    linkbordercolor={[rgb]{0,0.2,0.6}},%
+    citebordercolor={[rgb]{0,0.6,0.2}},%
+    filebordercolor={[rgb]{0.8,0,0.8}},%
+    urlbordercolor={[rgb]{0.8,0,0.8}},%
+    runbordercolor={[rgb]{0.8,0,0.8}},%
+    menubordercolor={[rgb]{0,0.2,0.6}},% 
+    pdftitle={Práctica 3: Detectores centelladores con fotomultiplicadores},%
+    pdfauthor={López Merino Marcos, Abraham Jain Jiménez},%
+    pdfsubject={Introducción a la Física Nuclear},%
+    pdfkeywords={Facultad de Ciencias, UNAM, Introducción a la Física Nuclear, Experimental},%
+    unicode = true%
+}
+
+\definecolor{base3}{RGB}{253, 246, 227}%
+\definecolor{pinkwave}{RGB}{255, 0, 128}%
+\definecolor{FCBlue}{RGB}{11, 61, 98}%
+\pagecolor{base3}
+
+\setlength{\droptitle}{-60pt} % raise the title
+\pretitle{\begin{center}\large\bfseries}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\LARGE #1
+    \end{center}
+    \vskip 0.25em
+    }%
+}
+\preauthor{\begin{center}
+\large \lineskip 0.5em%
+\begin{tabular}[t]{c}}
+\postauthor{\end{tabular}\par\end{center}}
+\predate{\begin{center}\small\bfseries}
+\postdate{\end{center}}
+
+
+\title{Práctica 3}
+\subtitle{Detectores centelladores con fotomultiplicadores}
+\author{%
+    Abraham Jain Jiménez \\ \href{mailto:jain@ciencias.unam.mx}{\footnotesize jain@ciencias.unam.mx}
+  \and Marcos López Merino \\ \href{mailto:marcoslm@ciencias.unam.mx}{\footnotesize marcoslm@ciencias.unam.mx}
+}%
+\date{Entrega: \duedate}
+
+% Encabezado y pie de página
+\setlength{\headheight}{43pt}
+\renewcommand{\headruleskip}{5pt}
+
+\pagestyle{fancy}
+\lhead{\parbox{0.33\textwidth}{Introducción a la Física Nuclear Grupo 8316}}
+\chead{}
+\rhead{\includegraphics[scale = 0.25, valign = c]{LogoFCUNAMcolor.pdf}}
+\renewcommand{\headrule}{
+    \begin{minipage}{\textwidth}%
+        \color{FCBlue} \hrule width \hsize height 2pt \kern 1mm \hrule width \hsize
+    \end{minipage}
+}
+
+\lfoot{}
+\cfoot{}
+\rfoot{Pág. \thepage \hspace{1pt} de \pageref{LastPage}}
+\renewcommand{\footrule}{
+    \begin{minipage}{1\textwidth}%
+        \color{FCBlue} \hrule width \hsize height 0.5pt  
+    \end{minipage}\par
+    
+}%
+
+\addbibresource{bibliography.bib}
+
+\newcommand{\idest}{\emph{i.e.},\xspace} % id est
+\newcommand{\duedate}{\DTMdisplaydate{2023}{05}{09}{-1}}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{fancy}
+    \begin{abstract}
+        \kant[1]
+    \end{abstract}
+
+    \section*{Introducción}
+    \kant[1-2]
+    
+    \section*{Desarrollo experimental}
+    \kant[1-2]
+
+    \section*{Discusión}
+    \kant[1-2]
+    
+    \section*{Resultados y conclusiones}
+    \kant[1]    
+    
+    % Referencias
+    \newpage
+    \printbibliography
+\end{document}
