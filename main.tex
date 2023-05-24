@@ -157,18 +157,64 @@
     \section*{Introducción}
         El montaje del sistema con el que nos corresponde trabajar consitió de dos fuentes radiactivas de decaimiento tipo beta (\ch{^{60} Co} y \ch{^{137} Cs}), dos cristales centelladores inorgánicos (\ch{CsI (Tl)} y \ch{BGO (Bi Ge O)}), fuente de voltaje (TENNELEC TC 952), amplificador modelo 572\cite{Amplifier572}, ADC\cite{USC30ADC} y una computadora. El montaje se muestra en la \cref{fig:montaje}.
 
-        \begin{figure}[htb]
+        Existen diferentes tipos de detectores, cada uno con características propias que los hacen más o menos adecuados para la detección de cierto tipo de partículas. En esta práctica se trabajó con detectores centelladores inorgánicos.
+
+        Respecto a cada uno de los tres cristales centelladores usados en esta práctica, podemos comentar lo siguiente:
+
+        \begin{itemize}
+            \item \ch{NaI}
+
+            Cristal de yoduro de sodio. tienen una alta eficiencia luminosa que corresponde a \emph{la calidad} del centelleo. Su espectro de emisión bien adaptado a la curva de sensibilidad de los tubos fotomultiplicadores. Es uno de los detectores más brillantes. Usado para detección $\gamma$ a bajas energías.
+
+            \item \ch{CsI}
+
+            Es relativamente brillante (con respecto al de NaI). Usado en física de partículas, para la detección de partículas alfa. Es un material denso. 
+        \end{itemize}
+
+        Los radioisótopos tienen los esquemas de decaimiento siguientes:
+
+        \begin{align*}
+            \ch{^{60} Co &-> ^{60} Ni + \e^{-} + \ensuremath{\bar{\nu}}_{\e}},\\
+            \ch{^{137} Cs &-> ^{137} Ba + \e^{-} + \ensuremath{\bar{\nu}}_{\e}}.
+        \end{align*}
+    
+    \pagebreak
+    \section*{Desarrollo experimental}
+        Como primer paso vamos a visualizar los dados registrados por el ADC. Es decir, vamos a mostrar los espectros de altura de pulso contra número de cuentas.
+
+        \begin{figure}[!htb]
             \centering
-            \includegraphics{example-image-a}
-            \caption{Diagrama del montaje experimental para la detección de partículas.}
-            \label{fig:montaje}
+            \captionsetup[subfigure]{font=small, width=.8\linewidth}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth, trim={1cm 0 1cm 0}, clip]{height_spectrum_CsI_60Co.pdf}
+                \caption{Espectro de altura de pulsos contra número de cuentas para la fuente radioactiva \ch{^{60} Co} usando el centellador de \ch{CsI (Tl)}.}
+                \label{fig:HeightPulseCoCsI}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth, trim={1cm 0 1cm 0}, clip]{height_spectrum_CsI_137Cs.pdf}
+                \caption{Espectro de altura de pulsos contra número de cuentas para la fuente radioactiva \ch{^{137} Cs} usando el centellador de \ch{CsI (Tl)}.}
+                \label{fig:HeightPulseCsCsI}
+            \end{subfigure}%
+            \vspace{1cm}
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth, trim={1cm 0 1cm 0}, clip]{height_spectrum_BGO_60Co.pdf}
+                \caption{Espectro de altura de pulsos contra número de cuentas para la fuente radioactiva \ch{^{60} Co} usando el centellador de \ch{BGO (BiGeO)}.}
+                \label{fig:HeightPulseCoBGO}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width=\textwidth, trim={1cm 0 1cm 0}, clip]{height_spectrum_BGO_137Cs.pdf}
+                \caption{Espectro de altura de pulsos contra número de cuentas para la fuente radioactiva \ch{^{137} Cs} usando el centellador de \ch{BGO (BiGeO)}.}
+                \label{fig:HeightPulseCsBGO}
+            \end{subfigure}%
+            \caption{Espectros de alturas de pulsos contra número de cuentas.}
+            \label{fig:heightPulses}
         \end{figure}
 
-        Existen diferentes tipos de detectores, cada uno con características propias que los hacen más o menos adecuados para la detección de cierto tipo de partículas. En esta práctica se trabajó con detectores centelladores inórganicos.
-
-        Un centellador 
-    
-    \section*{Desarrollo experimental}
+        \pagebreak
         \subsection*{Calibración de energía}
         Una de las tareas principales de cualquier análisisen un experimento en el campo de la física nuclear experimental a bajas energías es la calibración de la energía, \idest necesitamos encontrar una relación entre los canales \(\text{Ch}\) en el centro del fotopico y la energía correspondiente a cada una de las gammas \(E_{\gamma}\). Esta relación tiene la forma
 
