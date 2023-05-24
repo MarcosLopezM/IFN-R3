@@ -253,7 +253,7 @@
 
     \subsection*{Espectros de energía}
 
-    A partir de las \cref{eq:csiCalibration,eq:csiCalibration} se obtuvieron los espectros de Energía contra Número de cuentas para cada uno de los centelladores. Estos espectros se muestran en las \cref{fig:csiCoSpectrum,bgoCsSpectrum}.
+    A partir de las \cref{eq:csiCalibration,eq:bgoCalibration} se obtuvieron los espectros de Energía contra Número de cuentas para cada uno de los centelladores. Estos espectros se muestran en las \cref{fig:csiCoSpectrum,fig:bgoCsSpectrum}.
 
     \subsubsection*{Espectro de energía para el centellador \ch{CsI (Tl)}}
 
@@ -288,8 +288,50 @@
     \end{figure}
 
     \section*{Discusión}
-    \kant[1-2]
     
+    Recordemos que el ancho del fotopico es una medida de la resolución del sistema de detección. La resolución habitualmente es definida como el cociente entre el \(\text{FWHM}\) del fotopico y \(E_{0}\) que es la energía correspondiente a las gammas, \idest el centroide de la distribución.
+
+    \begin{equation}
+        R = \dfrac{\text{FWHM}}{E_{0}} \cdot \qty{100}{\percent},
+        \label{eq:resolution}
+    \end{equation}
+
+    donde \(\text{FWHM} = 2.35\sigma\).
+    
+    \subsection*{Resolución del centellador \ch{CsI (Tl)}}
+
+    A partir de \cref{eq:resolution} calculamos la resolución para cada uno de los fotopicos, tal que
+
+    \begin{align*}
+        R_{\ch{Co}1} &= \qty{0.2266}{\percent}, \\
+        R_{\ch{Co}2} &= \qty{0.1408}{\percent}, \\
+        R_{\ch{Cs}} &= \qty{0.0537}{\percent}.
+    \end{align*}
+
+    Notamos que la resolución es mejor para el fotopico de \ch{^{137} Cs} que para los fotopicos de \ch{^{60} Co}. Esto se debe a que la energía de las gammas de \ch{^{137} Cs} es menor que la energía de las gammas de \ch{^{60} Co} y por lo tanto la resolución es mejor.
+
+    Por lo que la resolución de nuestras mediciones es
+
+    \begin{equation*}
+        R = \qty{0.0537}{\percent}.
+    \end{equation*}
+
+    \subsection*{Resolución del centellador \ch{BGO (BiGeO)}}
+
+    La resolución para cada uno de los fotopicos usando el centellador \ch{BGO (BiGeO)} se muestra a continuación
+
+    \begin{align*}
+        R_{\ch{Co}1} &= \qty{0.1239}{\percent}, \\
+        R_{\ch{Co}2} &= \qty{0.0769}{\percent}, \\
+        R_{\ch{Cs}} &= \qty{0.0293}{\percent}.
+    \end{align*}
+
+    Para este caso, sucede lo mismo que para el centellador \ch{CsI (Tl)}, la resolución es mejor para el fotopico de \ch{^{137} Cs} que para los fotopicos de \ch{^{60} Co}. Por lo que la resolución de nuestras mediciones es
+
+    \begin{equation*}
+        R = \qty{0.0293}{\percent}.
+    \end{equation*}
+
     \section*{Resultados y conclusiones}
     \kant[1]
     
