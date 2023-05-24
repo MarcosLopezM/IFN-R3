@@ -332,6 +332,167 @@
         R = \qty{0.0293}{\percent}.
     \end{equation*}
 
+    \subsection*{Hombro Compton}
+
+    Otra forma en la que interactúan los rayos gamma con el cristal centellador es por medio de la dispersión de Compton. La dispersión de Compton es una dispersión puramente cinemática de un fotón incidente de energía \(E_{\gamma}\) con un electrón en el cristal centellador.
+
+    Notemos que en el espectro Compton (ver \cref{fig:comptonSpectrum}) el pico de deflección (\emph{backscatter peak}) a bajos voltajes ocurre cuando los fotones golpean el detector y son dispersados hasta el centellador con una energía menor. La parte más plana del espectro (\emph{Compton plateau}) ocurre cuando los fotones son dispersados en el centellador. Es decir, la energía del electrón deflectado es detectada, mientras que los fotones pasan desapercibidos. La energía varía de un máximo en el Hombro Compton, cuando los fotones son deflectados con un ángulo de \qty{180}{\degree}, a cero cuando los fotones son dispersados con un ángulo de \qty{0}{\degree}.
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics{compton_spectrum.jpg}
+        \caption{Ejemplo de un espectro de altura para una fuente de rayos gammas en el que están presentes la dispersión de Compton y el efecto fotoeléctrico.\cite{gammaSpectroscopy}}
+        \label{fig:comptonSpectrum}
+    \end{figure}
+
+    Ocasionalmente, un rayo gamma dispersado en el centellador puede intereactuar via el efecto fotoeléctrico. De esta manera, debemos calcular la energía para este caso, a través de
+
+    \begin{equation}
+        \Delta E_{C} = \dfrac{E}{1 + \dfrac{2E}{m_{\e}c^{2}}},
+        \label{eq:comptonEnergy}
+    \end{equation}
+
+    donde \(E\) es la energía de la gamma y \(m_{\e}c^{2}\) la energía en reposo del electrón en \unit{\keV}. Mientras que la energía máxima, el Hombro Compton, se obtiene mediante
+
+    \begin{equation}
+        E_{HC} = E - \Delta E_{C}.
+        \label{eq:comptonEdge}
+    \end{equation}
+
+    Es necesario mencionar que si el espectro tiene más de un fotopico, cada uno de estos picos tendrá un Hombro Compton asociado.
+
+    \subsubsection*{Hombro Compton usando el centellador \ch{CsI (Tl)}}
+
+    A partir de \cref{eq:comptonEnergy,eq:comptonEdge} tenemos que el Hombro Compton para cada una de las fuentes radioactivas es
+
+    \begin{align*}
+        E_{HC}^{\ch{^{60} Co}} &= \qty{963.42}{\keV},\\
+        E_{HC}^{\ch{^{137} Cs}} &= \qty{477.25}{\keV}.
+    \end{align*}
+
+    Estos valores se encuentran representados aproximadamente mediante círculos en las \cref{fig:comptonEdgeCsICo,fig:comptonEdgeCsICs}.
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[trim={1cm 3.75cm 1cm 3.75cm}, width=\textwidth, clip]{compton_edge_CsICo.pdf}
+        \caption{Espectro de energía contra número de cuentas para la fuente de \ch{^{60} Co} usando el centellador \ch{CsI (Tl)}. El valor del Hombro Compton está representado por el círculo.}
+        \label{fig:comptonEdgeCsICo}
+    \end{figure}
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[scale=0.8, trim={1cm 0 1cm 0}, clip]{compton_edge_CsICs.pdf}
+        \caption{Espectro de energía contra número de cuentas para la fuente de \ch{^{137} Cs} usando el centellador \ch{CsI (Tl)}. El valor del Hombro Compton está representado por el círculo.}
+        \label{fig:comptonEdgeCsICs}
+    \end{figure}
+
+    \subsubsection*{Hombro Compton usando el centellador \ch{BGO (BiGeO)}}
+
+    A partir de \cref{eq:comptonEnergy,eq:comptonEdge} tenemos que el Hombro Compton para cada una de las fuentes radioactivas es
+
+    \begin{align*}
+        E_{HC}^{\ch{^{60} Co}} &= \qty{963.42}{\keV},\\
+        E_{HC}^{\ch{^{137} Cs}} &= \qty{477.33}{\keV}.
+    \end{align*}
+
+    Estos valores se encuentran representados aproximadamente mediante círculos en las \cref{fig:comptonEdgeBGOCo,fig:comptonEdgeBGOCs}.
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[trim={1cm 0 1cm 0}, clip, scale=0.8]{compton_edge_BGOCo.pdf}
+        \caption{Espectro de energía contra número de cuentas para la fuente de \ch{^{60} Co} usando el centellador \ch{BGO (BiGeO)}. El valor del Hombro Compton está representado por el círculo.}
+        \label{fig:comptonEdgeBGOCo}
+    \end{figure}
+
+    \begin{figure}[!htb]
+        \centering
+        \includegraphics[trim={1cm 0 1cm 0}, clip, scale=0.8]{compton_edge_BGOCs.pdf}
+        \caption{Espectro de energía contra número de cuentas para la fuente de \ch{^{137} Cs} usando el centellador \ch{BGO (BiGeO)}. El valor del Hombro Compton está representado por el círculo.}
+        \label{fig:comptonEdgeBGOCs}
+    \end{figure}
+
+    \pagebreak
+    \subsection*{Error relativo}
+
+    Finalmente, calculamos el error relativo para los valores obtenidos del Hombro Compton y la energía del fotopico. Recordemos que el error relativo se calcula mediante
+
+    \begin{equation}
+        \epsilon_{r} = \dfrac{\Delta E}{E} \cdot \qty{100}{\percent},
+    \end{equation}
+
+    con \(\Delta E = \abs{E_{bd} - E_{m}}\), donde \(E_{bd}\) es el valor de la energía teórico y \(E_{m}\) el valor medido. 
+    
+    \pagebreak
+    Por un lado, tenemos los resultados para los valores del Hombro Compton para cada uno de los centelladores, los cuales se encuentran en las \cref{tab:comptonErrorCsI,tab:comptonErrorBGO}.
+
+    \begin{table}[!htb]
+        \centering
+        \begin{tblr}{
+            colspec = {ccc},
+            hlines,
+            row{1} = {font = \bfseries}
+        }
+            Isótopo        & {Energía \\ (\si{\keV})} & $\varepsilon_{0}$          \\
+            \ch{^{137} Cs} & \num{477.25}             & \qty{38.62}{\percent}       \\
+            \ch{^{60} Co}1 & \num{963.42}                  & \qty{21.78}{\percent}       \\
+            \ch{^{60} Co}2 & \num{1118.10}                  & \qty{19.17}{\percent}
+        \end{tblr}
+        \caption{Energía del Hombro Compton con su correspondiente error relativo usando el detector centellador \ch{CsI}.}
+        \label{tab:comptonErrorCsI}
+    \end{table}
+
+    \begin{table}[htb]
+        \centering
+        \begin{tblr}{
+            colspec = {ccc},
+            hlines,
+            row{1} = {font = \bfseries}
+        }
+            Isótopo        & {Energía \\ (\si{\keV})} & $\varepsilon_{0}$          \\
+            \ch{^{137} Cs} & \num{477.33}             & \qty{38.62}{\percent}       \\
+            \ch{^{60} Co}1 & \num{963.42}                  & \qty{21.78}{\percent}       \\
+            \ch{^{60} Co}2 & \num{1118.10}                  & \qty{19.17}{\percent}
+        \end{tblr}
+        \caption{Energía del Hombro Compton con su correspondiente error relativo usando el detector centellador \ch{BGO (BiGeO)}.}
+        \label{tab:comptonErrorBGO}
+    \end{table}
+
+    \pagebreak
+    Por el otro, las energías de los fotopicos con sus respectivos errores relativos se encuentran en las \cref{tab:photopeakErrorCsI,tab:photopeakErrorBGO}.
+
+    \begin{table}[htb]
+        \centering
+        \begin{tblr}{
+            colspec = {ccc},
+            hlines,
+            row{1} = {font = \bfseries}
+        }
+            Isótopo        & {Energía \\ (\si{\keV})} & $\varepsilon_{0}$          \\
+            \ch{^{137} Cs} & \num{661.10}             & \qty{0.064}{\percent}       \\
+            \ch{^{60} Co}1 & \num{1166.67}                  & \qty{0.084}{\percent}       \\
+            \ch{^{60} Co}2 & \num{1331.65}                  & \qty{0.56}{\percent}
+        \end{tblr}
+        \caption{Energía del fotopico con su correspondiente error relativo usando el detector centellador \ch{CsI}.}
+        \label{tab:photopeakErrorCsI}
+    \end{table}
+
+    \begin{table}[htb]
+        \centering
+        \begin{tblr}{
+            colspec = {ccc},
+            hlines,
+            row{1} = {font = \bfseries}
+        }
+            Isótopo        & {Energía \\ (\si{\keV})} & $\varepsilon_{0}$          \\
+            \ch{^{137} Cs} & \num{666.77}             & \qty{0.773}{\percent}       \\
+            \ch{^{60} Co}1 & \num{1178.78}                  & \qty{0.473}{\percent}       \\
+            \ch{^{60} Co}2 & \num{1327.84}                  & \qty{0.349}{\percent}
+        \end{tblr}
+        \caption{Energía del fotopico con su correspondiente error relativo usando el detector centellador \ch{BGO (BiGeO)}.}
+        \label{tab:photopeakErrorBGO}
+    \end{table}
+
+
     \section*{Resultados y conclusiones}
     \kant[1]
     
